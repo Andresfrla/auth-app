@@ -8,7 +8,7 @@ import { AuthContext } from "../store/auth-context";
 function SignupScreen() {
   const [isAuthenticating, setIsAuthenticating] = useState(false);
 
-  const authCtx = useContext(AuthContext)
+  const authCtx = useContext(AuthContext);
 
   async function signupHandler({ email, password }) {
     setIsAuthenticating(true);
@@ -20,8 +20,8 @@ function SignupScreen() {
         "Authentication failed!",
         "Could not create a user. Please check your input and try again later! "
       );
+      setIsAuthenticating(false);
     }
-    setIsAuthenticating(false);
   }
 
   if (isAuthenticating) {
